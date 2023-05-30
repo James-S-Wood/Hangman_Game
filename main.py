@@ -9,6 +9,63 @@ def hangman():
     guessed_letters = []
     guessed_word = ["_"] * word_length
 
+    """In this updated version, I added a list called gallows that contains ASCII art representations 
+    of the hangman's gallows at different stages. Each stage corresponds to the number of tries left in 
+    the game. The gallows art is displayed before each guess, providing a visual representation of the 
+    hangman's progress."""
+
+    gallows = [
+        '''
+           +---+
+               |
+               |
+               |
+              ===
+        ''',
+        '''
+           +---+
+           O   |
+               |
+               |
+              ===
+        ''',
+        '''
+           +---+
+           O   |
+           |   |
+               |
+              ===
+        ''',
+        '''
+           +---+
+           O   |
+          /|   |
+               |
+              ===
+        ''',
+        '''
+           +---+
+           O   |
+          /|\\  |
+               |
+              ===
+        ''',
+        '''
+           +---+
+           O   |
+          /|\\  |
+          /    |
+              ===
+        ''',
+        '''
+           +---+
+           O   |
+          /|\\  |
+          / \\  |
+              ===
+        '''
+    ]
+
     print("Welcome to Hangman!")
     print("Guess the word by entering one letter at a time.")
     print("You have 6 tries to guess the word correctly.")
