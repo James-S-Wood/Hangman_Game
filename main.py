@@ -1,5 +1,6 @@
 import random
 
+
 def hangman():
     words = ["python", "programming", "computer", "hangman", "openai"]
     selected_word = random.choice(words).lower()
@@ -43,5 +44,6 @@ def hangman():
 
     print("\nGame over! You ran out of tries.")
     print("The word was:", selected_word)
+
 
 hangman()
