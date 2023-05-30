@@ -47,3 +47,16 @@ def hangman():
 
 
 hangman()
+
+"""In this code, we define the hangman function that represents the main logic of the game. It initializes a list of words, selects a random word from the list, and sets up variables like the word length, number of tries, and lists to store guessed letters and the current state of the guessed word.
+
+The function then enters a loop where it prompts the user for a guess, checks the validity of the guess, and updates the game state accordingly. If the guessed letter is correct, it updates the guessed word with the correctly guessed letter. If the guessed letter is incorrect, it reduces the number of tries.
+
+The game continues until the player either guesses the word correctly or runs out of tries. At the end of the game, an appropriate message is displayed.
+
+To play the Hangman game, simply call the hangman function.
+
+Feel free to enhance the code further by adding ASCII art for the hangman's gallows or implementing more advanced features like difficulty levels or word categories.
+
+Have fun coding and enjoy playing Hangman!"""
+
