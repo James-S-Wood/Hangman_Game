@@ -8,6 +8,7 @@ from tkinter import messagebox
  left. It also includes an entry field for the user to input their guesses and a button to check their guess.
 """
 
+
 def hangman():
     words = ["python", "programming", "computer", "hangman", "openai"]
     selected_word = random.choice(words).lower()
@@ -47,7 +48,7 @@ def hangman():
                 window.destroy()
             else:
                 # Update the gallows image based on the number of tries left
-                gallows_canvas.itemconfig(gallows_images[6 - tries], state="normal")
+                gallows_canvas.itemconfigure(gallows_images[6 - tries], state=tk.NORMAL)
 
         update_game()
 
@@ -66,15 +67,18 @@ def hangman():
     gallows_canvas.pack()
 
     gallows_images = [
-        gallows_canvas.create_line(20, 180, 180, 180, width=3, state="hidden"),
-        gallows_canvas.create_line(50, 180, 50, 20, width=3, state="hidden"),
-        gallows_canvas.create_line(50, 20, 130, 20, width=3, state="hidden"),
-        gallows_canvas.create_line(130, 20, 130, 50, width=3, state="hidden"),
-        gallows_canvas.create_oval(115, 50, 145, 80, width=3, state="hidden"),
-        gallows_canvas.create_line(130, 80, 130, 130, width=3, state="hidden"),
-        gallows_canvas.create_line(130, 100, 115, 120, width=3, state="hidden"),
-        gallows_canvas.create_line(130, 100, 145, 120, width=3, state="hidden")
+        gallows_canvas.create_line(20, 180, 180, 180, width=3, ),
+        gallows_canvas.create_line(50, 180, 50, 20, width=3, ),
+        gallows_canvas.create_line(50, 20, 130, 20, width=3, ),
+        gallows_canvas.create_line(130, 20, 130, 50, width=3, ),
+        gallows_canvas.create_oval(115, 50, 145, 80, width=3, ),
+        gallows_canvas.create_line(130, 80, 130, 130, width=3, ),
+        gallows_canvas.create_line(130, 100, 115, 120, width=3, ),
+        gallows_canvas.create_line(130, 100, 145, 120, width=3, )
     ]
+
+    for image in gallows_images:
+        gallows_canvas.itemconfigure(image, state=tk.HIDDEN)
 
     word_label = tk.Label(window, text="Word:")
     word_label.pack()
